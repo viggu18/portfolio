@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-import { GitHub, LinkedIn, Instagram } from "@mui/icons-material";
+import {
+  GitHub,
+  LinkedIn,
+  Instagram,
+  ArrowDownwardOutlined,
+} from "@mui/icons-material";
 
 const ProfileOptions = [
   { url: "https://github.com/viggu18", icon: GitHub },
@@ -61,11 +66,19 @@ const Nav = () => {
           <a
             key={item.tag}
             href={item.tag}
-            className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-700 hover:text-white"
+            className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-700 hover:text-white cursor-pointer"
           >
             {item.label}
           </a>
         ))}
+        <a
+          href="https://drive.google.com/file/d/1MRHVFfzJ60KIiF5tOgmR3zLSSxC8RdfM/view?usp=sharing"
+          target="_blank"
+          rel="noreferrer"
+          className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-700 hover:text-white cursor-pointer"
+        >
+          Resume <ArrowDownwardOutlined />
+        </a>
       </div>
       <div className="2xl:hidden xl:hidden lg:hidden">
         <svg
@@ -110,6 +123,16 @@ const Nav = () => {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1MRHVFfzJ60KIiF5tOgmR3zLSSxC8RdfM/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-700 hover:text-white cursor-pointer"
+              >
+                Resume <ArrowDownwardOutlined />
+              </a>
+            </li>
           </ul>
         </div>
       )}
