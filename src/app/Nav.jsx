@@ -9,8 +9,20 @@ const ProfileOptions = [
 ];
 const TabOptions = [
   {
-    label: "Projects",
-    tag: "#projects",
+    label: "Career",
+    tag: "#career",
+  },
+  {
+    label: "Skills",
+    tag: "#skills",
+  },
+  {
+    label: "Git Repos",
+    tag: "#gitrepo",
+  },
+  {
+    label: "Get in Touch",
+    tag: "#getintouch",
   },
 ];
 

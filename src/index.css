@@ -4,17 +4,25 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Dosis", sans-serif;
+  /* font-family: "Dosis", sans-serif;
+   */
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
+  transition: 0.2s;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-
   background-color: #f1f1f1;
+  user-select: none;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1 {
+  font-weight: 800;
 }
