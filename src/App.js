@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Nav from "./app/Nav";
+import Projects from "./app/Projects";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="flex items-center justify-center min-h-screen min-w-full bg-gradient-to-r from-[#1a5e86] to-[#D7EDE1]">
+        <div
+          id="container"
+          className="max-h-[90vh] w-[80%] bg-white rounded-lg drop-shadow-lg relative"
         >
-          Learn React
-        </a>
-      </header>
+          <Nav />
+          <div className="overflow-y-scroll max-h-[70vh] h-fit overflow-x-hidden hide-scroll-bar object-contain">
+            <Projects />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
