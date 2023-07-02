@@ -66,7 +66,7 @@ const GitRepo = () => {
       >
         {projects.map((item) => (
           <div
-            className="p-5 shadow-lg rounded-xl border border-gray-1 bg-gradient-to-r text-[#D7EDE1] from-[#287aa9] to-[#6abbea] hover:scale-110 hover:from-[#86c2e5] hover:to-[#48647d]  flex-shrink-0  xl:w-[250px] lg:w-[250px] md:w-1/2 sm:w-1/2 xs:w-full "
+            className="p-5 shadow-lg rounded-xl border border-gray-1 bg-gradient-to-r text-[#D7EDE1] from-[#25aae1] to-[#04befe] hover:scale-110 hover:from-[#04befe] hover:to-[#3f86ed]  flex-shrink-0  xl:w-[250px] lg:w-[250px] md:w-1/2 sm:w-1/2 xs:w-full "
             key={item.id}
           >
             <a
