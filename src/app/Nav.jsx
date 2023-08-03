@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import {
   GitHub,
@@ -8,19 +8,23 @@ import {
 } from "@mui/icons-material";
 
 const ProfileOptions = [
-  { url: "https://github.com/viggu18", icon: GitHub },
-  { url: "https://www.instagram.com/vcn.o_o/", icon: Instagram },
+  { url: "https://github.com/viggu18", icon: GitHub, title: "Github" },
+  {
+    url: "https://www.instagram.com/vcn.o_o/",
+    icon: Instagram,
+    title: "Instagram",
+  },
   {
     url: "https://www.linkedin.com/in/viggu18/",
     icon: LinkedIn,
     title: "LinkedIn",
   },
-  {
-    url: "https://leetcode.com/nayakvignesh18/",
-    icon: "https://leetcode.com/_next/static/images/logo-dark-c96c407d175e36c81e236fcfdd682a0b.png",
-    isImage: true,
-    title: "Leetcode",
-  },
+  // {
+  //   url: "https://leetcode.com/nayakvignesh18/",
+  //   icon: "https://leetcode.com/_next/static/images/logo-dark-c96c407d175e36c81e236fcfdd682a0b.png",
+  //   isImage: true,
+  //   title: "Leetcode",
+  // },
 ];
 
 const TabOptions = [
@@ -47,12 +51,29 @@ const TabOptions = [
 ];
 
 const Nav = () => {
+  const menuRef = useRef(null);
   const [open, setOpen] = useState(false);
 
   function onMenuToggle() {
     setOpen((prev) => !prev);
   }
 
+  // useEffect(() => {
+  //   /**
+  //    * Alert if clicked on outside of element
+  //    */
+  //   function handleClickOutside(event) {
+  //     if (menuRef.current && !menuRef.current.contains(event.target) && open) {
+  //     }
+  //   }
+  //   // Bind the event listener
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     // Unbind the event listener on clean up
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, [menuRef, open]);
+  // console.log(open);
   return (
     <nav className="w-full max-w-screen flex flex-wrap justify-between rounded-lg items-center p-4 bg-gradient-to-r from-[#1a5e86] to-[#D7EDE1]">
       <div className="flex items-center gap-4">
@@ -103,10 +124,7 @@ const Nav = () => {
 
       <div className="lg:hidden xl:hidden 2xl:hidden">
         <div className="relative">
-          <button
-            className="text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center"
-            onClick={onMenuToggle}
-          >
+          <button className="text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               id="menu-button"
@@ -114,6 +132,7 @@ const Nav = () => {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              onClick={onMenuToggle}
             >
               <path
                 strokeLinecap="round"
@@ -125,6 +144,7 @@ const Nav = () => {
           </button>
 
           <ul
+            ref={menuRef}
             className={`${
               open ? "flex flex-col" : "hidden"
             } absolute pt-1 text-base text-gray-700 w-fit bg-white drop-shadow-lg py-2 px-1 rounded-md min-w-[200px] duration-200 right-1`}

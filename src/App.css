@@ -2,7 +2,7 @@
   font-family: "Lexend";
   background-color: #f1f1f1;
   width: "-webkit-fill-available";
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .hide-scroll-bar {
