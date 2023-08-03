@@ -19,12 +19,12 @@ const ProfileOptions = [
     icon: LinkedIn,
     title: "LinkedIn",
   },
-  // {
-  //   url: "https://leetcode.com/nayakvignesh18/",
-  //   icon: "https://leetcode.com/_next/static/images/logo-dark-c96c407d175e36c81e236fcfdd682a0b.png",
-  //   isImage: true,
-  //   title: "Leetcode",
-  // },
+  {
+    url: "https://leetcode.com/nayakvignesh18/",
+    icon: "https://leetcode.com/_next/static/images/logo-dark-c96c407d175e36c81e236fcfdd682a0b.png",
+    isImage: true,
+    title: "Leetcode",
+  },
 ];
 
 const TabOptions = [
@@ -58,22 +58,18 @@ const Nav = () => {
     setOpen((prev) => !prev);
   }
 
-  // useEffect(() => {
-  //   /**
-  //    * Alert if clicked on outside of element
-  //    */
-  //   function handleClickOutside(event) {
-  //     if (menuRef.current && !menuRef.current.contains(event.target) && open) {
-  //     }
-  //   }
-  //   // Bind the event listener
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => {
-  //     // Unbind the event listener on clean up
-  //     document.removeEventListener("mousedown", handleClickOutside);
-  //   };
-  // }, [menuRef, open]);
-  // console.log(open);
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target) && open) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuRef, open]);
+
   return (
     <nav className="w-full max-w-screen flex flex-wrap justify-between rounded-lg items-center p-4 bg-gradient-to-r from-[#1a5e86] to-[#D7EDE1]">
       <div className="flex items-center gap-4">
@@ -153,15 +149,23 @@ const Nav = () => {
               <li key={item.tag} className="p-1">
                 <a
                   href={item.tag}
-                  className="rounded-lg px-3 py-4 text-slate-700 font-medium hover:bg-slate-700 hover:text-white"
-                  role="menuitem"
-                  id="menu-item-0"
+                  className="rounded-lg py-4"
                   onClick={onMenuToggle}
                 >
                   {item.label}
                 </a>
               </li>
             ))}
+            <li className="p-1">
+              <a
+                href="https://drive.google.com/file/d/1KwlfJ74JWnoayT5Kre5Iz5WK1ozL6zvK/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg px-3 py-4"
+              >
+                Resume <ArrowDownwardOutlined />
+              </a>
+            </li>
           </ul>
         </div>
       </div>
