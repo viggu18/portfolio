@@ -43,7 +43,7 @@ const Nav = () => {
   }
 
   return (
-    <nav className="max-w-screen-xl flex flex-wrap justify-between rounded-lg items-center p-4 bg-gradient-to-r from-[#1a5e86] to-[#D7EDE1]">
+    <nav className="max-w-screen flex flex-wrap justify-between rounded-lg items-center p-4 bg-gradient-to-r from-[#1a5e86] to-[#D7EDE1]">
       <div className="flex items-center gap-4">
         <div>
           <a target="_blank" rel="noreferrer" href="https://vercel.com/viggu18">
@@ -72,7 +72,7 @@ const Nav = () => {
           </a>
         ))}
         <a
-          href="https://drive.google.com/file/d/1MRHVFfzJ60KIiF5tOgmR3zLSSxC8RdfM/view?usp=sharing"
+          href="https://drive.google.com/file/d/1KwlfJ74JWnoayT5Kre5Iz5WK1ozL6zvK/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
           className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-700 hover:text-white cursor-pointer"
